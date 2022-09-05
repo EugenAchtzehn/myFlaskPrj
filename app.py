@@ -27,3 +27,19 @@ def pageAppInfo():
     'remark': 'Python - Web Framework'
   }
   return render_template('page.html', appInfo=appInfo)
+
+@app.route('/page/data')
+def pageData():
+  # dict
+  data = {
+    '01': 'Text111',
+    '02': 'Text222',
+    '03': 'Text333',
+    '04': 'Text444',
+    '05': 'Text555',
+  }
+  return render_template('page.html', data=data)
+
+@app.route('/static')
+def staticPage():
+  return render_template('static.html')
