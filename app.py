@@ -47,22 +47,32 @@ def staticPage():
 
 @app.route('/form')
 def formPage():
+  # 表單頁
   return render_template('form.html')
 
+# 對 /submit 路徑接收 POST, GET 方法
 @app.route('/submit', methods=['POST', 'GET'])
 def submit():
+  # 如果請求方法為 post，呼叫 request 物件下的 method 可知前端用 HTTP 哪種方法
   if request.method == 'POST':
+    # post 方法必須使用 request.form 的變數
     user = request.form["user"]
     print("post: user => ", user)
+    # 重導向到成功頁
     return redirect(url_for("success", name=user, action="post"))
   else:
+    # get 方法必須使用 request.args 的變數
     user = request.args.get("user")
     print("get : user => ", user)
+    # redirect() 函式包含 url_for() 函式，是固定用法
     return redirect(url_for("success", name=user, action="get"))
 
 @app.route("/success/<action>/<name>")
 def success(name, action):
-    return "{} : Welcome {} ~ !!!".format(action, name)
+    # 字串帶入 action, name
+    # 下面是 demo
+    # return "{} : Welcome {} ~ !!!".format(action, name)
+    return f"{action} : Welcome {name} ~ !!!"
 
 if __name__ == "__main__":
     app.run()
