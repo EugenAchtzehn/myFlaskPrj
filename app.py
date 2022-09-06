@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify, json
 
 app = Flask(__name__)
 
@@ -73,6 +73,11 @@ def success(name, action):
     # 下面是 demo
     # return "{} : Welcome {} ~ !!!".format(action, name)
     return f"{action} : Welcome {name} ~ !!!"
+
+# ajax testing
+@app.route("/apitest")
+def webapi():
+  return render_template('data.html')
 
 if __name__ == "__main__":
     app.run()
