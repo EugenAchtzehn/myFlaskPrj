@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Static - Page</title>
-  <link rel="stylesheet"
-        href="{{ url_for('static', filename='style.css')}}">
+        <meta charset="UTF-8">
+        <title>Static - Page</title>
+        <link rel="stylesheet"
+              href="{{ url_for('static', filename='style.css')}}">
 </head>
 
 <body>
-  <h1>Template - Page</h1>
-  <h2 class="target-heading">Must be rendered in sans-serif</h2>
-  <button id="btnHello"
-          onclick="greetings()">Say Hello</button>
-  <!-- <script src="../static/script.js"></script> -->
-  <!-- url_for 是轉址用的函數 -->
-  <script type="text/javascript"
-          src="{{ url_for('static', filename='script.js') }}"></script>
+        <h1>Template - Page</h1>
+        <h2 class="target-heading">Must be rendered in sans-serif</h2>
+        <button id="btnHello"
+                onclick="greetings()">Say Hello</button>
+        <!-- <script src="../static/script.js"></script> -->
+        <!-- url_for 是轉址用的函數 -->
+        <script type="text/javascript"
+                src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>

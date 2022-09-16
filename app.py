@@ -2,8 +2,11 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 import json
 
+# 約定俗成用法，讓 flask 知道你的 root 在哪裡
 app = Flask(__name__)
 
+# @app.route("path") 後接的一定是一個要執行的 function
+# 讓路由知道要執行哪個工作
 @app.route("/")
 @app.route("/hello")
 def hello():
@@ -82,4 +85,7 @@ def webapi():
   return render_template('data.html')
 
 if __name__ == "__main__":
-    app.run()
+  # debug 模式允許 auto reload for code changes
+  # And show a debugger in case an exception happened.
+  app.run(debug=True)
+  # app.run()

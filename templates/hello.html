@@ -12,6 +12,11 @@
         rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
         crossorigin="anonymous">
+  <link rel="icon"
+        type="image/x-icon"
+        href="{{url_for('static', filename='favicon.ico')}}">
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css')}}">
 </head>
 
 <body>
@@ -25,6 +30,7 @@
     <button type="button"
             class="btn btn-success mt-3"
             onclick="alert('Hello, Flask!')">Hello!</button>
+    <button type="button">CCC</button>
   </div>
 
 </body>
